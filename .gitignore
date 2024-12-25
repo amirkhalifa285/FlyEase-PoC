@@ -1,0 +1,20 @@
+# Python-specific files
+__pycache__/
+*.py[cod]
+env/                # Exclude virtual environment folder
+
+# Node.js-specific files
+node_modules/       # Exclude Node.js dependencies
+*.env               # Exclude environment variables
+
+# IDE/Editor-specific files
+.vscode/            # VS Code workspace settings
+.idea/              # PyCharm/IntelliJ workspace settings
+*.swp               # Vim swap files
+.DS_Store           # macOS Finder metadata
+Thumbs.db           # Windows Explorer metadata
+
+# Build artifacts
+build/
+dist/
+coverage/

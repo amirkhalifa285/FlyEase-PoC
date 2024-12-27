@@ -1,5 +1,5 @@
 from app.models.service import Service
-from app.database.database import SessionLocal
+from app.db.database import SessionLocal
 
 def get_all_services():
     db = SessionLocal()

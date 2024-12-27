@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String
-from app.database.database import Base
+from backend.base import Base
 
 class Flight(Base):
     __tablename__ = "flights"

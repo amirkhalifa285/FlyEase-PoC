@@ -1,17 +1,14 @@
+from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.future import select
 from app.models.flight import Flight
-from app.database.database import SessionLocal
 
-def get_all_flights():
-    db = SessionLocal()
-    flights = db.query(Flight).all()
-    db.close()
-    return flights
+async def get_all_flights(db: AsyncSession):
+    result = await db.execute(select(Flight))
+    return result.scalars().all()
 
-def create_flight(flight_data):
-    db = SessionLocal()
+async def create_flight(db: AsyncSession, flight_data: dict):
     new_flight = Flight(**flight_data)
     db.add(new_flight)
-    db.commit()
-    db.refresh(new_flight)
-    db.close()
+    await db.commit()
+    await db.refresh(new_flight)
     return new_flight

@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from backend.app.controllers.service_controller import get_all_services, create_service
+from ..controllers.service_controller import get_all_services, create_service
 
 router = APIRouter()
 

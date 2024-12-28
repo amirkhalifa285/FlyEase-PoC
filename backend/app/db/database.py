@@ -4,10 +4,12 @@ from dotenv import load_dotenv
 import os
 
 # Load environment variables
-load_dotenv()
+load_dotenv(os.path.join(os.path.dirname(__file__), "../../.env"))
 
 # Define the database URL with asyncpg
-DATABASE_URL = os.getenv("DATABASE_URL")  # Example: postgresql+asyncpg://user:password@localhost/dbname
+DATABASE_URL = os.getenv("DATABASE_URL")  
+
+print(f"Loaded DATABASE_URL: {DATABASE_URL}")
 
 if not DATABASE_URL:
     raise ValueError("DATABASE_URL environment variable is not set")

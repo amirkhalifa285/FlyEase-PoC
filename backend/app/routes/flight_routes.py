@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
-from backend.app.db.database import get_db
-from backend.app.controllers.flight_controller import get_all_flights, create_flight  # Adjust if necessary
+from ..db.database import get_db
+from ..controllers.flight_controller import get_all_flights, create_flight  # Adjust if necessary
 from pydantic import BaseModel
 
 # Define the router

@@ -1,6 +1,6 @@
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
-from app.models.flight import Flight
+from ..models.flight import Flight
 
 async def get_all_flights(db: AsyncSession):
     result = await db.execute(select(Flight))
